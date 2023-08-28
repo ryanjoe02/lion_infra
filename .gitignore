@@ -1,3 +1,11 @@
+# Terraform
+set_db_server.sh
+set_be_server.sh
+.terraform.lock.hcl
+
+##
+.DS_Store
+
 # Local .terraform directories
 **/.terraform/*
 
