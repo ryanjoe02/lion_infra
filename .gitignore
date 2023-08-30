@@ -1,4 +1,6 @@
 # Terraform
+be_init_script.tftpl
+db_init_script.tftpl
 set_db_server.sh
 set_be_server.sh
 .terraform.lock.hcl

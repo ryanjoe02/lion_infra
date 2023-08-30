@@ -34,7 +34,7 @@ echo "POSTGRES_PASSWORD=${db_password}" >> $ENV_PATH
 echo "POSTGRES_PORT=${db_port}" >> $ENV_PATH
 
 mkdir /home/$USERNAME/.ssh
-echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEWUSMkNbEO9bb1IcDB8TQYgjS7BYVrmevCdL3ztgFwF csy5501@gmail.com" >> /home/$USERNAME/.ssh/authorized_keys
+echo "<deleted sshkey>" >> /home/$USERNAME/.ssh/authorized_keys
 
 docker pull postgres:13
 
