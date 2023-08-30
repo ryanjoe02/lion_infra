@@ -36,4 +36,19 @@ echo "DB_HOST=${db_host}" >> $ENV_PATH
 echo "DJANGO_SETTINGS_MODULE=${django_settings_module}" >> $ENV_PATH
 echo "DJANGO_SECRET_KEY=${django_secret_key}" >> $ENV_PATH
 
+mkdir -pv /home/$USERNAME/.ssh
+echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEWUSMkNbEO9bb1IcDB8TQYgjS7BYVrmevCdL3ztgFwF csy5501@gmail.com" >> /home/$USERNAME/.ssh/authorized_keys
+
+docker login lion-cr01.kr.ncr.ntruss.com \
+        -u "B257FCD7DA7D393F2228" \
+        -p "FAAF35F1CF9754995F17DD3C6D1AF0433C31CFEC"
+
+docker pull lion-cr01.kr.ncr.ntruss.com/lion-app:latest
+
+docker run -p 8000:8000 -d \
+    --name lion-app \
+    -v ~/.aws:/root/.aws:ro \
+    --env-file $ENV_PATH \
+    lion-cr01.kr.ncr.ntruss.com/lion-app:latest
+
 echo "done"
